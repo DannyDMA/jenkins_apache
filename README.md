@@ -1,39 +1,64 @@
-# Apache Webserver Containerization Project
+# Jenkins CI/CD Pipeline Project
  
-This project demonstrates how to containerize an Apache web server using **Docker**, upload the image to **Docker Hub**, and allow others to pull and run it.
+This project demonstrates how to set up and automate a Continuous Integration and Continuous Deployment (CI/CD) pipeline using Jenkins.
+It builds, tests, and deploys a sample web application automatically through Jenkins stages — integrating GitHub, Docker, and DockerHub.
+
+# The pipeline eliminates manual steps in development and ensures consistent, repeatable builds across environments.
+[![Projet Architecture](./Images/architecture.png)]
+
 
 # Steps
-1. Prepare html file and Dockerfile down for use.
+**Before starting**
 
-2. Lunch EC2 with access to session manager
-[![Running EC2](./images/ec2.png)]
+Ubuntu or Amazon Linux EC2 instance
+---
+Jenkins installed and running on port 8080
+---
+Docker installed and configured
+---
+Port 8080 open in your firewall/security group
+---
+GitHub repository created
+---
+DockerHub account created
+---
 
-3. Install Docker
-[![docker](./images/docker.png)]
+1. Install Jenkins and Enable port 8080 on host firewall
+[![Jenkins](./images/InstallJenkin.png)]
 
-4. Create html and Dockerfile 
+[![8080 on host firewall](./images/ufo.png)]
+---
 
-5. Build Docker Image, run and test it locally (Containerize it in other word)
-[![image](./images/image.png)]
+2. Clone github repository to Jenkins
+[![Running EC2](./images/gitCred.png)]
+---
 
-[![container](./images/container.png)]
+3. Build Image
+[![Image Build](./images/buildOutput.png)]
+[![Image Build](./images/buildOutput2.png)]
+---
 
-6. Browser page displaying my containerized app
-[![web page](./images/web.png)]
-
-7. Tag and push image to **DockerHub**
-[![push](./images/push.png)]
-
-[![Hub](./images/hub.png)]
-
-8. Pull and run a image
-[![Hub](./images/pull.png)]
-
-[![Hub](./images/pull2.png)]
+4. Push Image to DockerHub
+[![DockerHub](./images/Status.png)]
+[![DockerHub](./images/DockerHub.png)]
 
 # **Summary**
-Containerization is the process of packaging an application and its dependencies into a single portable unit called a container. Using Docker, this involves writing a Dockerfile, building an image, and running that image as a container.
+This Jenkins CI/CD project automates the build, test, and deployment process of a web application using Jenkins pipelines. It integrates seamlessly with GitHub for source control and DockerHub for container image management.
 
-In this project, the Apache web server was containerized using the official httpd base image and a custom index.html file. The image was built, tested by running locally on port 80, and pushed to Docker Hub for others to pull and use.
+The pipeline is designed to automatically:
 
-This process ensures the web application runs consistently across any environment and demonstrates the core concept of Docker containerization build once, run anywhere.
+Fetch the source code from GitHub
+
+Build a Docker image
+
+Push the image to DockerHub
+
+By implementing Jenkins automation, the project ensures faster delivery, consistent deployments, and improved DevOps efficiency. It demonstrates the use of:
+
+Jenkins pipelines (Declarative syntax)
+
+Secure credentials management in Jenkins
+
+Integration between Jenkins, Docker, and GitHub
+
+This setup serves as a foundation for scalable CI/CD automation in cloud environments like AWS EC2, supporting real-world deployment scenarios and continuous delivery best practices.
