@@ -5,7 +5,7 @@ It builds, tests, and deploys a sample web application automatically through Jen
 
 # The pipeline eliminates manual steps in development and ensures consistent, repeatable builds across environments.
 
-[![Projet Architecture](./Images/architecture.png)]
+[![Projet Architecture](./Images/arch.png)]
 
 # Steps
 **Before starting**
