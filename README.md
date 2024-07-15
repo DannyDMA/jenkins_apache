@@ -4,8 +4,8 @@ This project demonstrates how to set up and automate a Continuous Integration an
 It builds, tests, and deploys a sample web application automatically through Jenkins stages — integrating GitHub, Docker, and DockerHub.
 
 # The pipeline eliminates manual steps in development and ensures consistent, repeatable builds across environments.
-[![Projet Architecture](./Images/architecture.png)]
 
+[![Projet Architecture](./Images/architecture.png)]
 
 # Steps
 **Before starting**
